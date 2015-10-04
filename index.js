@@ -33,10 +33,10 @@ var resolveSync = function(dependency) {
 
 var resolve = function(dependency, cb) {
   wrapSync(resolveUp)(dependency, function(err, resolve) {
-    if (resolve.length !== 0) return resolve;
+    if (err) return cb(err);
+    if (resolve.length !== 0) return cb(null, resolve);
     install(dependency, function(err) {
-      if (err) return cb(err);
-      return cb(null, [path.join(globalNpmPath, dependency)]);
+      return cb(err, [path.join(globalNpmPath, dependency)]);
     });
   });
 };

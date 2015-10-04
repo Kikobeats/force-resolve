@@ -6,9 +6,10 @@ should        = require 'should'
 fs            = require 'fs-extra'
 globalNpmPath = require 'global-modules'
 
-deleteAssets = ->
+deleteAssets = (cb) ->
   fs.removeSync path.resolve 'node_modules', 'jshint'
   fs.removeSync path.resolve globalNpmPath, 'force-require-test'
+  cb?()
 
 describe 'force-resolve ::', ->
 
@@ -19,7 +20,6 @@ describe 'force-resolve ::', ->
 
     it "resolve a dependency that exist locally", ->
       dep = forceResolve 'mocha'
-      console.log dep
       Array.isArray(dep).should.be.equal true
       (dep.length > 0).should.be.equal true
 
@@ -33,13 +33,10 @@ describe 'force-resolve ::', ->
       Array.isArray(dep).should.be.equal true
       (dep.length > 0).should.be.equal true
 
-  describe 'integration', ->
-
-    before deleteAssets
-
-    it "resolve async", (done) ->
-      forceResolve 'force-require-test', (err, dep)->
-        return done err if err
-        Array.isArray(dep).should.be.equal true
-        (dep.length > 0).should.be.equal true
-        done()
+    it 'async interface', (done) ->
+      deleteAssets ->
+        forceResolve 'force-require-test', (err, dep) ->
+          return done err if err
+          Array.isArray(dep).should.be.equal true
+          (dep.length > 0).should.be.equal true
+          done()
