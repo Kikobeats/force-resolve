@@ -7,7 +7,7 @@
 [![NPM Status](http://img.shields.io/npm/dm/force-resolve.svg?style=flat-square)](https://www.npmjs.org/package/force-resolve)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/kikobeats)
 
-> Ensure that a NPM dependency is resolved. Similar to [force-require](https://github.com/Kikobeats/force-require) but return the path of the dependency instead.
+> Ensure to resolve the path of a NPM dependency. Similar to [force-require](https://github.com/Kikobeats/force-require) but return the path of the dependency instead.
 
 ## Install
 
