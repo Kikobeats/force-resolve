@@ -1,0 +1,36 @@
+{
+  "name": "force-resolve",
+  "description": "Ensure that a NPM dependency is resolved. Similar to force-require but return the path of the dependency instead.",
+  "version": "0.0.0",
+  "author": {
+    "name": "Kiko Beats",
+    "email": "josefrancisco.verdu@gmail.com",
+    "url": "https://github.com/Kikobeats"
+  },
+  "repository": "Kikobeats/force-resolve",
+  "keywords": [
+    "npm",
+    "dependency",
+    "resolved"
+  ],
+  "dependencies": {
+    "global-modules": "*",
+    "oh-my-terminal": "*",
+    "resolve-up": "~0.3.0",
+    "wrap-sync": "*"
+  },
+  "devDependencies": {
+    "coffee-script": "*",
+    "fs-extra": "*",
+    "mocha": "*",
+    "should": "*"
+  },
+  "engines": {
+    "node": ">= 0.10.0",
+    "npm": ">= 1.4.0"
+  },
+  "scripts": {
+    "test": "sh test/test.sh"
+  },
+  "license": "MIT"
+}
