@@ -20,18 +20,17 @@ npm install force-resolve --save
 ```js
 var forceResolve = require('force-resolve');
 
-// [ 
+// [
 //   '/Users/kikobeats/Projects/force-resolve/node_modules/mocha',
-//   '/usr/local/lib/node_modules/mocha' 
+//   '/usr/local/lib/node_modules/mocha'
 // ]
 ```
 
-
 ## API
 
-### .(&lt;String&gt;, [cb])
+### forceResolve.(&lt;String&gt;, [cb])
 
-Try to load a dependency based in the name. If `cb` is provided then the call will be resolved as `.resolveSync`)
+Try to load a dependency based in the name. If `cb` is provided then the call will be resolved as sync interface.
 
 Internally the library follow the next algorithm:
 
@@ -42,10 +41,6 @@ as direct dependency or a dependency of another dependency.
 using the module [global-modules](https://github.com/jonschlinkert/global-modules).
 
 3) At this poin of the algorithm, the dependency was not found. Let's install as global module and later require it.
-
-### .resolveSync(&lt;String&gt;)
-
-Just the same that the default asynchronous version, but synchronous.
 
 ## License
 

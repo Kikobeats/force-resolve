@@ -45,5 +45,3 @@ module.exports = function(dependency, cb) {
   if (!cb) return resolveSync(dependency);
   return resolve(dependency, cb);
 };
-
-module.exports.resolveSync = resolveSync;
