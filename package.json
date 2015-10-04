@@ -1,7 +1,7 @@
 {
   "name": "force-resolve",
   "description": "Ensure that a NPM dependency is resolved. Similar to force-require but return the path of the dependency instead.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
